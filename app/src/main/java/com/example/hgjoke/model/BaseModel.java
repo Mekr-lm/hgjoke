@@ -7,11 +7,15 @@ package com.example.hgjoke.model;
 public class BaseModel {
     private String msg;
     private int code;
-
+    private boolean isOk(){
+        if (code == 1010) {
+            return true;
+        }
+        return false;
+    }
     public String getMsg() {
         return msg;
     }
-
     public void setMsg(String msg) {
         this.msg = msg;
     }

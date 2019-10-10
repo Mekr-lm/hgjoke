@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">hgjoke</string>
+    <string name="text_main_item1">商家</string>
+    <string name="text_main_item2">商城</string>
+    <string name="text_main_item4">购物车</string>
+    <string name="text_main_item5">我的</string>
 </resources>

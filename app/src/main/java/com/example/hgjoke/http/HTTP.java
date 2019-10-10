@@ -4,7 +4,6 @@ import android.text.TextUtils;
 
 import com.example.hgjoke.App;
 import com.example.hgjoke.model.BaseModel;
-import com.example.hgjoke.utils.SignUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +25,7 @@ import rx.schedulers.Schedulers;
 public class HTTP {
     private final static String MD5_KEY = "aebb71d041d59a7d6a7257a204238aa0";
     private static API API;
-    public static String url="http://192.168.250.116:8080/";
+    public static String url="http://192.168.250.95:8080/";
     /**
      * 初始化网络请求，在Application创建的时候调用,确保只初始化一次
      */
@@ -56,7 +55,6 @@ public class HTTP {
     public static Observable<BaseModel> TestMy(String name) {
         Map<String, String> map = getMap();
         map.put("name",name);
-        map.put("auth", SignUtil.getSign(map, MD5_KEY));
         return thread(API.TestMy(map));
     }
 }

@@ -6,7 +6,6 @@ import java.util.Map;
 
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import rx.Observable;
 
@@ -18,5 +17,4 @@ public interface API {
     @POST("search/html")
     @FormUrlEncoded
     Observable<BaseModel> TestMy(@FieldMap Map<String, String> param);
-
 }

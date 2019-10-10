@@ -30,11 +30,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-
     //ButterKnife
-    implementation 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-
+    implementation 'com.jakewharton:butterknife:+'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:+'
     //RxAndroid
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'com.trello:rxlifecycle:1.0'
@@ -47,4 +45,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.3.0'
     //分包
     implementation 'com.android.support:multidex:1.0.1'
+    //EventBus
+    implementation 'org.greenrobot:eventbus:3.1.1'
 }

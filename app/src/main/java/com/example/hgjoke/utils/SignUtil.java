@@ -7,12 +7,13 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Comparator;
 import java.util.Map;
 import java.util.TreeMap;
-
 /**
  * author:hm
  * Date:2019/9/28
  */
+
 public class SignUtil {
+
     public static String getSign(Map<String, String> map, String sign) {
         StringBuilder sb = new StringBuilder();
         Map<String, String> resultMap = sortMapByKey(map);
@@ -79,4 +80,5 @@ public class SignUtil {
             return str1.compareTo(str2);
         }
     }
+
 }
