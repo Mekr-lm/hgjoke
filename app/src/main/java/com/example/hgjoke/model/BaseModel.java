@@ -7,7 +7,7 @@ package com.example.hgjoke.model;
 public class BaseModel {
     private String msg;
     private int code;
-    private boolean isOk(){
+    public boolean isOk(){
         if (code == 1010) {
             return true;
         }

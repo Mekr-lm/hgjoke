@@ -1,6 +1,6 @@
 package com.example.hgjoke.http;
 
-import com.example.hgjoke.model.BaseModel;
+import com.example.hgjoke.model.TestModel;
 
 import java.util.Map;
 
@@ -14,7 +14,7 @@ import rx.Observable;
  * Date:2019/9/28
  */
 public interface API {
-    @POST("search/html")
+    @POST("hi")
     @FormUrlEncoded
-    Observable<BaseModel> TestMy(@FieldMap Map<String, String> param);
+    Observable<TestModel> TestMy(@FieldMap Map<String, String> param);
 }

@@ -2,8 +2,7 @@ package com.example.hgjoke.http;
 
 import android.text.TextUtils;
 
-import com.example.hgjoke.App;
-import com.example.hgjoke.model.BaseModel;
+import com.example.hgjoke.model.TestModel;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +24,7 @@ import rx.schedulers.Schedulers;
 public class HTTP {
     private final static String MD5_KEY = "aebb71d041d59a7d6a7257a204238aa0";
     private static API API;
-    public static String url="http://192.168.250.95:8080/";
+    public static String url="http://192.168.250.84:8769/api-a/";
     /**
      * 初始化网络请求，在Application创建的时候调用,确保只初始化一次
      */
@@ -34,6 +33,17 @@ public class HTTP {
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create());
+        if (true) {
+            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .connectTimeout(30, TimeUnit.SECONDS) //超时时间
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .writeTimeout(30, TimeUnit.SECONDS)
+                    .addInterceptor(interceptor).build();
+            builder.client(client);
+        }
         API = builder.build().create(API.class);
     }
     //接口=======================
@@ -52,7 +62,7 @@ public class HTTP {
     private static <T> Observable<T> thread(Observable<T> observable) {
         return observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
-    public static Observable<BaseModel> TestMy(String name) {
+    public static Observable<TestModel> TestMy(String name) {
         Map<String, String> map = getMap();
         map.put("name",name);
         return thread(API.TestMy(map));

@@ -15,6 +15,8 @@ import java.util.List;
 import butterknife.ButterKnife;
 import rx.Observable;
 
+import static com.example.hgjoke.utils.Toast.show;
+
 /**
  * author:hm
  * Date:2019/9/28
@@ -70,5 +72,9 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         ACTIVITIES.remove(this);
+    }
+
+    public void toast(String text) {
+        show(text);
     }
 }
