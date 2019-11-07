@@ -25,7 +25,6 @@ import butterknife.BindView;
  * Date:2019/9/28
  */
 public class MainActivity extends BaseActivity {
-
     private SP sp = new SP();
     @BindView(R.id.vp_main)
     ViewPager mVp;
@@ -35,10 +34,10 @@ public class MainActivity extends BaseActivity {
     RadioButton mRb1;
     @BindView(R.id.rb_item2)
     RadioButton mRb2;
+    @BindView(R.id.rb_item3)
+    RadioButton mRb3;
     @BindView(R.id.rb_item4)
     RadioButton mRb4;
-    @BindView(R.id.rb_item5)
-    RadioButton mRb5;
     private List<Fragment> mFragment = new ArrayList<>();
     @Override
     protected int getLayoutId() {
@@ -52,10 +51,6 @@ public class MainActivity extends BaseActivity {
     }
     private void initView() {
         EB.register(this);
-//        mFragment.add(new HomeFragment());
-//        mFragment.add(new ClassFragment());
-//        mFragment.add(new CartFragment());
-//        mFragment.add(new MeFragment());
         mVp.setOffscreenPageLimit(mFragment.size());
         mVp.setAdapter(new MainFragmentAdapter(getSupportFragmentManager(), mFragment));
     }
@@ -75,10 +70,10 @@ public class MainActivity extends BaseActivity {
                         mRb2.setChecked(true);
                         break;
                     case 2:
-                        mRb4.setChecked(true);
+                        mRb3.setChecked(true);
                         break;
                     case 3:
-                        mRb5.setChecked(true);
+                        mRb4.setChecked(true);
                         break;
                     default:
                         mRb1.setChecked(true);
@@ -99,10 +94,10 @@ public class MainActivity extends BaseActivity {
                 case R.id.rb_item2:
                     mVp.setCurrentItem(1);
                     break;
-                case R.id.rb_item4:
+                case R.id.rb_item3:
                     mVp.setCurrentItem(2);
                     break;
-                case R.id.rb_item5:
+                case R.id.rb_item4:
                     mVp.setCurrentItem(3);
                     break;
             }
