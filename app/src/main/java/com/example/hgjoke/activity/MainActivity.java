@@ -1,7 +1,6 @@
 package com.example.hgjoke.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -11,6 +10,10 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.hgjoke.R;
 import com.example.hgjoke.adapters.MainFragmentAdapter;
 import com.example.hgjoke.entitys.EBData;
+import com.example.hgjoke.fragment.CarFragment;
+import com.example.hgjoke.fragment.ClassFragment;
+import com.example.hgjoke.fragment.HomeFragment;
+import com.example.hgjoke.fragment.MeFragment;
 import com.example.hgjoke.http.HTTP;
 import com.example.hgjoke.utils.EB;
 import com.example.hgjoke.utils.SP;
@@ -52,18 +55,18 @@ public class MainActivity extends BaseActivity {
         initListener();
     }
     private void initView() {
+        rxDestroy(HTTP.TestMy("黄明")).subscribe(model->{
+
+        },e->{
+            e.printStackTrace();
+        });
         EB.register(this);
+        mFragment.add(new HomeFragment());
+        mFragment.add(new ClassFragment());
+        mFragment.add(new CarFragment());
+        mFragment.add(new MeFragment());
         mVp.setOffscreenPageLimit(mFragment.size());
         mVp.setAdapter(new MainFragmentAdapter(getSupportFragmentManager(), mFragment));
-        rxDestroy(HTTP.TestMy("邓媛媛")).subscribe(model->{
-            if(model.isOk()){
-                Log.d("TestData",model.getData().getName());
-            }else{
-                toast(model.getMsg());
-            }
-        },e->{
-            Log.d("TestData",e.getMessage());
-        });
     }
     private void initListener() {
         mVp.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

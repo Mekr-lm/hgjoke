@@ -1,10 +1,10 @@
 package com.example.hgjoke;
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.multidex.MultiDexApplication;
 
+import com.example.hgjoke.entitys.User;
 import com.example.hgjoke.http.HTTP;
 
 /**
@@ -14,11 +14,18 @@ import com.example.hgjoke.http.HTTP;
 public class App extends MultiDexApplication {
 
     public static Context AppCtx;
+    public static User user;
     @Override
     public void onCreate() {
         super.onCreate();
         HTTP.init();
         AppCtx = getApplicationContext();
     }
-
+    public static String getToken(){
+        if(user!=null) {
+            return user.getToken();
+        }else {
+            return "";
+        }
+    }
 }
