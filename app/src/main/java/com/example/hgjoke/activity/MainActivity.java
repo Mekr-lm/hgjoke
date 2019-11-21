@@ -14,7 +14,6 @@ import com.example.hgjoke.fragment.CarFragment;
 import com.example.hgjoke.fragment.ClassFragment;
 import com.example.hgjoke.fragment.HomeFragment;
 import com.example.hgjoke.fragment.MeFragment;
-import com.example.hgjoke.http.HTTP;
 import com.example.hgjoke.utils.EB;
 import com.example.hgjoke.utils.SP;
 
@@ -55,11 +54,6 @@ public class MainActivity extends BaseActivity {
         initListener();
     }
     private void initView() {
-        rxDestroy(HTTP.TestMy("黄明")).subscribe(model->{
-
-        },e->{
-            e.printStackTrace();
-        });
         EB.register(this);
         mFragment.add(new HomeFragment());
         mFragment.add(new ClassFragment());

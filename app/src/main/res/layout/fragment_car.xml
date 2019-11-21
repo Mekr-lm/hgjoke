@@ -2,5 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/view_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_title_height"
+        android:background="@color/c_f00056"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/iv_home_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:background="@drawable/bg_sousuo_"
+            android:drawableLeft="@mipmap/ic_home_search"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:textSize="10dp"
+            android:text="搜索聊天"
+            android:textColor="@color/c_aaaaaa" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_weight="1" />
+    </LinearLayout>
 
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/shop_xr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

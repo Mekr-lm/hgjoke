@@ -1,6 +1,7 @@
 package com.example.hgjoke;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
 
 import androidx.multidex.MultiDexApplication;
 
@@ -15,15 +16,21 @@ public class App extends MultiDexApplication {
 
     public static Context AppCtx;
     public static User user;
+    public static DisplayMetrics metrics;
+    public static int w;
+    public static int h;
     @Override
     public void onCreate() {
         super.onCreate();
         HTTP.init();
         AppCtx = getApplicationContext();
+        metrics=this.getResources().getDisplayMetrics();
+        w = metrics.widthPixels;
+        h = metrics.heightPixels;
     }
     public static String getToken(){
         if(user!=null) {
-            return user.getToken();
+            return user.getAuthName();
         }else {
             return "";
         }

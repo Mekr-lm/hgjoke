@@ -20,7 +20,6 @@
             android:background="@drawable/bk_round_ffffff"
             android:drawablePadding="6dp"
             android:hint="请输入用户昵称"
-            android:inputType="number"
             android:maxLength="11"
             android:padding="12dp"
             android:textColorHint="@color/c_cccccc"

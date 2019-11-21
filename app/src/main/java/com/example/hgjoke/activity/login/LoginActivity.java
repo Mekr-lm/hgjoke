@@ -1,7 +1,7 @@
 package com.example.hgjoke.activity.login;
 
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -30,20 +30,16 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void init(Bundle savedInstanceState) {
-        mTvbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                rxDestroy(HTTP.login(mTvNickName.getText().toString().trim(),mTvPwd.getText().toString().trim())).subscribe(model->{
-                    if(model.isOk()){
-                        toast("登录成功");
-                        App.user = model.getData();
-                    }else{
-                        toast(model.getMsg());
-                    }
-                },e->{
-                    e.printStackTrace();
-                });
+        mTvbtn.setOnClickListener(view -> rxDestroy(HTTP.login(mTvNickName.getText().toString().trim(),mTvPwd.getText().toString().trim())).subscribe(model->{
+            if(model.isOk()){
+                toast("登录成功");
+                App.user = model.getData();
+                Log.d("TestData",App.user.getUser().getNickname());
+            }else{
+                toast(model.getMsg());
             }
-        });
+        },e->{
+            e.printStackTrace();
+        }));
     }
 }

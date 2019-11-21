@@ -19,11 +19,11 @@ public interface API {
     @FormUrlEncoded
     Observable<UserModel> TestMy(@FieldMap Map<String, String> param);
 
-    @POST("/login")
+    @POST("login")
     @FormUrlEncoded
     Observable<UserModel> login(@FieldMap Map<String, String> param);
 
-    @POST("/register")
+    @POST("register")
     @FormUrlEncoded
     Observable<BaseModel> register(@FieldMap Map<String, String> param);
 }
