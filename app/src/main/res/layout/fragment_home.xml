@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_main">
@@ -47,6 +48,7 @@
             android:src="@mipmap/ic_home_add" />
     </LinearLayout>
        <ScrollView
+           android:layout_below="@+id/view_title"
            android:layout_width="match_parent"
            android:layout_height="match_parent">
            <LinearLayout
@@ -58,7 +60,6 @@
                    android:layout_width="match_parent"
                    android:layout_height="160dp"/>
                <RelativeLayout
-                   android:layout_marginTop="10dp"
                    android:id="@+id/rl_title1"
                    android:layout_width="match_parent"
                    android:layout_height="210dp"
@@ -99,6 +100,7 @@
                        android:layout_height="wrap_content"/>
                </RelativeLayout>
                <TextView
+                   android:layout_marginTop="@dimen/text_size_10"
                    android:background="@color/white"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
@@ -112,4 +114,12 @@
                    android:layout_height="match_parent" />
            </LinearLayout>
        </ScrollView>
-</LinearLayout>
+    <ImageView
+        android:id="@+id/publish"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/ic_error_img"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="30dp"/>
+</RelativeLayout>

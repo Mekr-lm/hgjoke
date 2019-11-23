@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.hgjoke.R;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
 import butterknife.ButterKnife;
@@ -30,7 +32,12 @@ public abstract class BaseFragment extends RxFragment {
         init(view, savedInstanceState);
     }
 
-
+    public void setTitleText(View v, String title) {
+        try {
+            ((TextView) v.findViewById(R.id.tv_title_text)).setText(title);
+        } catch (Exception e) {
+        }
+    }
 
     //======================================
 

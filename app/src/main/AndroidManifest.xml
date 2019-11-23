@@ -9,16 +9,23 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:supportsRtl="true">
-        <activity android:name=".activity.ShopDetailsActivity"></activity>
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MessageDetailsActivity"></activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 服务详情 -->
+        </activity>
+        <activity android:name=".activity.ClassPublishActivity" />
+        <activity android:name=".activity.HomePublishActivity" />
+        <activity android:name=".activity.ClassSearchActivity" />
+        <activity android:name=".activity.HomeSearchActivity" />
+        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.ClassActivity" />
+        <activity android:name=".activity.ShopDetailsActivity" />
         <activity android:name=".activity.ServerDetailsActivity" /> <!-- 注册 -->
         <activity android:name=".activity.login.RegisterActivity" /> <!-- 登录 -->
         <activity android:name=".activity.login.LoginActivity" />

@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hgjoke.MessageDetailsActivity;
 import com.example.hgjoke.R;
-import com.example.hgjoke.activity.ShopDetailsActivity;
 import com.example.hgjoke.entitys.CarInfo;
 import com.example.hgjoke.fragment.BaseFragment;
 
@@ -43,8 +43,7 @@ public class ShopCarAdapter extends RecyclerView.Adapter<ShopCarAdapter.ViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mContext, ShopDetailsActivity.class);
-                intent.putExtra("data",mList.get(position));
+                Intent intent = new Intent(mContext, MessageDetailsActivity.class);
                 mContext.startActivity(intent);
             }
         });

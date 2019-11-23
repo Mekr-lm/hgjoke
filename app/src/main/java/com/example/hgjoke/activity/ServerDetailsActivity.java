@@ -29,6 +29,7 @@ public class ServerDetailsActivity extends BaseActivity {
         initView();
     }
     public void initView(){
+        setTitleText("需求详情");
         FServerInfo data = (FServerInfo) getIntent().getSerializableExtra("data");
         name.setText(data.getName());
         time.setText("于"+data.getTime()+"发布该需求");

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/c_f5d7ef">
+    android:background="@color/bg_main">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,14 +17,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@mipmap/bg_me_top" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@color/app_title_color">
 
                     <View
                         android:id="@+id/fake_statusbar_view"
@@ -56,8 +53,8 @@
                         android:id="@+id/lay_me_info"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:padding="20dp">
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/iv_me_avatar"
@@ -72,7 +69,7 @@
                             android:gravity="center"
                             android:padding="12dp"
                             android:text="登录"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="@dimen/text_size_16" />
                     </LinearLayout>
                 </LinearLayout>
@@ -89,7 +86,6 @@
                 android:background="@color/white"
                 android:orientation="vertical">
                 <LinearLayout
-                    android:id="@+id/lay_me_coupon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="?android:attr/selectableItemBackground"
@@ -103,7 +99,95 @@
                         android:drawablePadding="8dp"
                         android:gravity="center_vertical"
                         android:padding="12dp"
-                        android:text="我的优惠券"
+                        android:text="我的订单"
+                        android:textColor="@color/c_333333" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:drawableRight="@mipmap/ic_me_into" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/me_coupon"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:text="我发布的项目"
+                        android:textColor="@color/c_333333" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:drawableRight="@mipmap/ic_me_into" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/me_coupon"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:text="我的团队"
+                        android:textColor="@color/c_333333" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:drawableRight="@mipmap/ic_me_into" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/me_coupon"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:text="我收藏的项目"
+                        android:textColor="@color/c_333333" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
+                        android:drawableRight="@mipmap/ic_me_into" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/me_coupon"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:text="我收藏的团队"
                         android:textColor="@color/c_333333" />
                     <TextView
                         android:layout_width="wrap_content"

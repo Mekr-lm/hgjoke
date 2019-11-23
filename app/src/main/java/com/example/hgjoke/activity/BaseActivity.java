@@ -3,9 +3,11 @@ package com.example.hgjoke.activity;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.example.hgjoke.R;
 import com.trello.rxlifecycle.android.ActivityEvent;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
@@ -35,6 +37,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         setContentView(getLayoutId());
         ButterKnife.bind(this);
         init(savedInstanceState);
+        back();
     }
 
 
@@ -48,7 +51,13 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     protected abstract int getLayoutId();
 
     protected abstract void init(Bundle savedInstanceState);
+    public void back() {
+        try {
+            findViewById(R.id.iv_title_left).setOnClickListener(view -> finish());
+        } catch (Exception e) {
 
+        }
+    }
 
     /**
      * 回首页
@@ -76,5 +85,12 @@ public abstract class BaseActivity extends RxAppCompatActivity {
 
     public void toast(String text) {
         show(text);
+    }
+    
+    public void setTitleText(String title) {
+        try {
+            ((TextView) findViewById(R.id.tv_title_text)).setText(title);
+        } catch (Exception e) {
+        }
     }
 }

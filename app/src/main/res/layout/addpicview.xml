@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.hgjoke.addpicview.ScallerGridView
+        android:id="@+id/pic_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="2dp"
+        android:verticalSpacing="2dp"/>
+
+    <TextView
+        android:id="@+id/add_img"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="点击加号添加图片"
+        android:textSize="16sp"
+        android:visibility="gone"/>
+</RelativeLayout>

@@ -1,10 +1,13 @@
 package com.example.hgjoke.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hgjoke.App;
 import com.example.hgjoke.R;
+import com.example.hgjoke.activity.HomeActivity;
+import com.example.hgjoke.activity.HomePublishActivity;
+import com.example.hgjoke.activity.HomeSearchActivity;
 import com.example.hgjoke.adapters.FServerAdapter;
 import com.example.hgjoke.adapters.GlideImageLoader;
 import com.example.hgjoke.adapters.GridIconAdapter;
@@ -32,7 +38,7 @@ import butterknife.BindView;
  * author:hm
  * Date:2019/11/8
  */
-public class HomeFragment extends BaseFragment{
+public class HomeFragment extends BaseFragment implements View.OnClickListener{
     @BindView(R.id.bn_home_top)
     Banner mBanner;
     @BindView(R.id.rv_server_list)
@@ -41,6 +47,10 @@ public class HomeFragment extends BaseFragment{
     GridView grid_photo;
     @BindView(R.id.rv_home_list)
     RecyclerView mRv;
+    @BindView(R.id.iv_home_search)
+    TextView homeSearch;
+    @BindView(R.id.publish)
+    ImageView publish;
     private FServerAdapter mAdServer;
     private int page = 1;
     private List<BannerInfo> mLtBanner;
@@ -101,6 +111,8 @@ public class HomeFragment extends BaseFragment{
         mAdp.notifyDataSetChanged();
     }
     public void initListener(){
+        publish.setOnClickListener(this);
+        homeSearch.setOnClickListener(this);
         mXrServer.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -161,9 +173,21 @@ public class HomeFragment extends BaseFragment{
         };
         grid_photo.setAdapter(GridAdp);
         grid_photo.setOnItemClickListener((parent, view, position, id) ->{
-
+                startActivity(new Intent(mContext, HomeActivity.class));
                 }
         );
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.iv_home_search:
+                startActivity(new Intent(mContext, HomeSearchActivity.class));
+                break;
+            case R.id.publish:
+                startActivity(new Intent(mContext, HomePublishActivity.class));
+                break;
+        }
     }
 }
 
