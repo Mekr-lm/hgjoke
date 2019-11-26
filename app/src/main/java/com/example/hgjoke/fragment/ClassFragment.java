@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.hgjoke.App;
 import com.example.hgjoke.R;
 import com.example.hgjoke.activity.ClassActivity;
-import com.example.hgjoke.activity.ClassPublishActivity;
 import com.example.hgjoke.activity.ClassSearchActivity;
 import com.example.hgjoke.adapters.GridIconAdapter;
 import com.example.hgjoke.adapters.ShopClassAdapter;
@@ -38,9 +36,6 @@ public class ClassFragment extends BaseFragment implements View.OnClickListener{
     GridView grid_photo;
     @BindView(R.id.iv_home_search)
     TextView ClassSearch;
-    @BindView(R.id.publish)
-    ImageView publish;
-
     private ShopClassAdapter mAdp;
     @Override
     protected int getLayoutID() {
@@ -110,14 +105,12 @@ public class ClassFragment extends BaseFragment implements View.OnClickListener{
         });
     }
     public void initListener(){
-        publish.setOnClickListener(this);
+
     }
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.publish:
-                startActivity(new Intent(mContext, ClassPublishActivity.class));
-                break;
+
         }
     }
 }

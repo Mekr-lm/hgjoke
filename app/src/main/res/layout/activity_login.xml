@@ -41,6 +41,12 @@
             android:textColorHint="@color/c_cccccc"
             android:textSize="@dimen/text_size_14" />
 
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="立即注册" />
 
         <Button
             android:id="@+id/btn_login"

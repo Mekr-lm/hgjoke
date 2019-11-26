@@ -23,7 +23,7 @@ public class RegisterActivity extends BaseActivity {
     @BindView(R.id.btn_lg_complete)
     Button mTvbtn;
     @Override
-    protected int getLayoutId() {
+    protected int getLayoutId(){
         return R.layout.activity_register;
     }
 

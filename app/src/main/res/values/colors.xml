@@ -51,6 +51,11 @@
     <color name="text_color2">#C7C7C7</color>
     <color name="text_color3">#4CB96E</color>
 
-
     <color name="color_bottom">#000000</color>
+
+    <color name="blue">#3072F3</color>
+    <color name="jmui_jpush_blue">#2DD0CF</color>
+    <color name="menu_item_back_pres_color">#2DD0CF</color>
+    <color name="btn_send_textcolor">@color/white</color>
+    <color name="chat_text_color">#0B1816</color>
 </resources>

@@ -3,9 +3,6 @@ package com.example.hgjoke.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.BaseAdapter;
-import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,16 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hgjoke.App;
 import com.example.hgjoke.R;
-import com.example.hgjoke.activity.HomeActivity;
+import com.example.hgjoke.activity.ClassPublishActivity;
 import com.example.hgjoke.activity.HomePublishActivity;
 import com.example.hgjoke.activity.HomeSearchActivity;
 import com.example.hgjoke.adapters.FServerAdapter;
 import com.example.hgjoke.adapters.GlideImageLoader;
-import com.example.hgjoke.adapters.GridIconAdapter;
 import com.example.hgjoke.adapters.ShopRecommendAdapter;
 import com.example.hgjoke.entitys.BannerInfo;
 import com.example.hgjoke.entitys.FServerInfo;
-import com.example.hgjoke.entitys.GridIconInfo;
 import com.example.hgjoke.entitys.ShopInfo;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.youth.banner.Banner;
@@ -43,14 +38,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
     Banner mBanner;
     @BindView(R.id.rv_server_list)
     XRecyclerView mXrServer;
-    @BindView(R.id.grid_icon_view)
-    GridView grid_photo;
     @BindView(R.id.rv_home_list)
     RecyclerView mRv;
     @BindView(R.id.iv_home_search)
     TextView homeSearch;
     @BindView(R.id.publish)
-    ImageView publish;
+    TextView publish;
+    @BindView(R.id.publish_shop)
+    TextView publishShop;
     private FServerAdapter mAdServer;
     private int page = 1;
     private List<BannerInfo> mLtBanner;
@@ -112,6 +107,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
     }
     public void initListener(){
         publish.setOnClickListener(this);
+        publishShop.setOnClickListener(this);
         homeSearch.setOnClickListener(this);
         mXrServer.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
@@ -153,29 +149,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
         mAdServer.notifyDataSetChanged();
 
 
-        ArrayList<GridIconInfo> mData = new ArrayList<>();
-        mData.add(new GridIconInfo(R.mipmap.hairdressing,"小程序"));
-        mData.add(new GridIconInfo(R.mipmap.hairdressing,"安卓"));
-        mData.add(new GridIconInfo(R.mipmap.hairdressing,"苹果"));
-        mData.add(new GridIconInfo(R.mipmap.hairdressing,"移动端"));
-        mData.add(new GridIconInfo(R.mipmap.hairdressing,"网页"));
-        mData.add(new GridIconInfo(R.mipmap.hairdressing,"后台"));
-        mData.add(new GridIconInfo(R.mipmap.hairdressing,"java"));
-        mData.add(new GridIconInfo(R.mipmap.hairdressing,"C++"));
-        mData.add(new GridIconInfo(R.mipmap.hairdressing,".net"));
-        mData.add(new GridIconInfo(R.mipmap.hairdressing,"其他"));
-        BaseAdapter GridAdp = new GridIconAdapter<GridIconInfo>(mData, R.layout.item_grid_icon) {
-            @Override
-            public void bindView(ViewHolder holder, GridIconInfo obj) {
-                holder.setImageResource(R.id.img_icon, obj.getiId());
-                holder.setText(R.id.txt_icon, obj.getiName());
-            }
-        };
-        grid_photo.setAdapter(GridAdp);
-        grid_photo.setOnItemClickListener((parent, view, position, id) ->{
-                startActivity(new Intent(mContext, HomeActivity.class));
-                }
-        );
     }
 
     @Override
@@ -186,6 +159,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
                 break;
             case R.id.publish:
                 startActivity(new Intent(mContext, HomePublishActivity.class));
+                break;
+            case R.id.publish_shop:
+                startActivity(new Intent(mContext, ClassPublishActivity.class));
                 break;
         }
     }
