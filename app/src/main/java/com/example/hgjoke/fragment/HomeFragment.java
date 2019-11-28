@@ -89,7 +89,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
         mAdServer = new FServerAdapter(mContext,this);
         mXrServer.setAdapter(mAdServer);
 
-
         GridLayoutManager layoutManager = new GridLayoutManager(mContext, 1);
         layoutManager.setOrientation(GridLayoutManager.HORIZONTAL);
         mRv.setLayoutManager(layoutManager);

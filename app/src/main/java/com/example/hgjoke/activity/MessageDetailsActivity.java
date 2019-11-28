@@ -1,4 +1,4 @@
-package com.example.hgjoke;
+package com.example.hgjoke.activity;
 
 import android.annotation.TargetApi;
 import android.app.AppOpsManager;
@@ -25,7 +25,7 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.example.hgjoke.activity.BaseActivity;
+import com.example.hgjoke.R;
 import com.example.hgjoke.adapters.Adapter_ChatMessage;
 import com.example.hgjoke.entitys.ChatMessage;
 import com.example.hgjoke.im.JWebSocketClient;
@@ -159,7 +159,7 @@ public class MessageDetailsActivity extends BaseActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_send:
-                String content = et_content.getText().toString();
+                String content = et_content.getText().toString()+"|"+"4321";
                 if (content.length() <= 0) {
                     Util.showToast(mContext, "消息不能为空哟");
                     return;
@@ -222,11 +222,11 @@ public class MessageDetailsActivity extends BaseActivity implements View.OnClick
     private void setNotification(Context context) {
         Intent localIntent = new Intent();
         //直接跳转到应用通知设置的代码：
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             localIntent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
             localIntent.putExtra("app_package", context.getPackageName());
             localIntent.putExtra("app_uid", context.getApplicationInfo().uid);
-        } else if (android.os.Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
+        } else if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
             localIntent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
             localIntent.addCategory(Intent.CATEGORY_DEFAULT);
             localIntent.setData(Uri.parse("package:" + context.getPackageName()));

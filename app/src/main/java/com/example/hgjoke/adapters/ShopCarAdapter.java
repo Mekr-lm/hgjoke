@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.hgjoke.MessageDetailsActivity;
 import com.example.hgjoke.R;
+import com.example.hgjoke.activity.MessageDetailsActivity;
 import com.example.hgjoke.entitys.CarInfo;
 import com.example.hgjoke.fragment.BaseFragment;
 

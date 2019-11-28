@@ -24,7 +24,6 @@
             android:enabled="true"
             android:exported="false"
             android:process=":gray" />
-        <activity android:name=".MessageDetailsActivity"></activity>
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.MessageDetailsActivity"/>
         <activity android:name=".activity.ClassPublishActivity" />
         <activity android:name=".activity.HomePublishActivity" />
         <activity android:name=".activity.ClassSearchActivity" />

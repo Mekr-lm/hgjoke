@@ -123,7 +123,6 @@ public class JWebSocketClientService extends Service {
             @Override
             public void onMessage(String message) {
                 Log.e("JWebSocketClientService", "收到的消息：" + message);
-
                 Intent intent = new Intent();
                 intent.setAction("com.xch.servicecallback.content");
                 intent.putExtra("message", message);
